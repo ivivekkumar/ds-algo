@@ -10,4 +10,4 @@ import { BuySellStocksModule } from './buy-sell-stocks/buy-sell-stocks.module';
   controllers: [Top75Controller],
   providers: [Top75],
 })
-export class AppModule {}
+export class Top75Module {}

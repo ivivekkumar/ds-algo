@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { TwoSumModule } from './top75-leet-code/two-sum/two-sum.module';
+import { Top75Module } from './top75-leet-code/top75.module';
 
 @Module({
-  imports: [TwoSumModule],
+  imports: [Top75Module],
   controllers: [AppController],
   providers: [AppService],
 })
