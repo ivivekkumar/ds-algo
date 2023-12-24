@@ -14,6 +14,6 @@ const maxSubArr = (arr) => {
 }
 
 // Test case
-const nums = [1, -2, -3, 4, 8];
+const nums = [1, -2, -3, -4, 8];
 // Expected output: [24, 12, 8, 6]
 console.log(maxSubArr(nums));
