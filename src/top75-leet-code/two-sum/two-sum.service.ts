@@ -9,6 +9,7 @@ export class TwoSumService {
             const complement: number = target - nums[i];
 
             if(numIndicesMap.has(complement)){
+                console.log('Found match:', [numIndicesMap.get(complement)!, i]);
                 return [numIndicesMap.get(complement)!, i];
             }
 
