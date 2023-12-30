@@ -1,16 +1,29 @@
-// Given a matrix mat[][] of size N x M. The task is to find the largest rectangular sub-matrix by area whose sum is 0.
+// Given a string s and a dictionary of strings wordDict, 
+// return true if s can be segmented into a space-separated sequence of one or more dictionary words.
 
-// If there are multiple solutions return the rectangle which starts from minimum column index. If you still have multiple solutions return the one having greatest row number. If no such matrix is present return a zero (0) size matrix.
+// Note that the same word in the dictionary may be reused multiple times in the segmentation.
 
-// Example 1:
+function wordBreak(s, wordDict) {
+    const dp = Array(s.length + 1).fill(false);
+    dp[0] = true; // Empty string is always segmentable
 
-// Input: N = 3, M = 3
-// mat[][] =  1, 2, 3
-//           -3,-2,-1
-//            1, 7, 5
+    for (let i = 1; i <= s.length; i++) {
+        for (let j = 0; j < i; j++) {
+            if (dp[j] && wordDict.includes(s.substring(j, i))) {
+                dp[i] = true;
+                break;
+            }
+        }
+    }
 
-// Output:  1, 2, 3
-//         -3,-2,-1
+    return dp[s.length];
+}
 
-// Explanation: This is the largest sub-matrix,
-// whose sum is 0.
+
+const s1 = "leetcode";
+const wordDict1 = ["leet", "code"];
+console.log(wordBreak(s1, wordDict1));  // Output: true
+
+const s3 = "catsandog";
+const wordDict3 = ["cats", "dog", "sand", "and", "cat"];
+console.log(wordBreak(s3, wordDict3));  // Output: false
